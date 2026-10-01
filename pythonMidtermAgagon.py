@@ -77,7 +77,7 @@ while True:
         except FileNotFoundError:
             print("No records found.")
 
-    # Option 3 clear or remove sales log data/ overwrite
+    # Option 3 clear or remove sales log data/ overwrite data
     elif option == 3:
         file = open("sales_log.txt", "w")
         file.close()
