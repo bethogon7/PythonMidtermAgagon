@@ -1,4 +1,5 @@
 while True:
+    print("")
     print(" ")
     print("=========================================")
     print("      Sales Record Management System     ")
@@ -9,6 +10,7 @@ while True:
     print("4. Exit System")
     print("=========================================")
     print(" ")
+    print(" ")
 
     try:
         option = int(input("Enter the number of option you would like to do : "))
@@ -16,7 +18,8 @@ while True:
     except ValueError:
         print("Please enter a number from 1 - 4.")
 
-    # Option 1 add
+
+    # Option 1 append or add data
     if option == 1:
 
         item = input("Enter item name: ")
@@ -74,7 +77,7 @@ while True:
         except FileNotFoundError:
             print("No records found.")
 
-    # Option 3 clear
+    # Option 3 clear or remove sales log data/ overwrite
     elif option == 3:
         file = open("sales_log.txt", "w")
         file.close()
@@ -87,6 +90,6 @@ while True:
         print("Thank you for using the Sales Record Management System")
         exit()
 
-    # If none of the 4 options is chosen
+    # If no option is chosen
     else:
         print("Invalid option please select from 1 - 4")
