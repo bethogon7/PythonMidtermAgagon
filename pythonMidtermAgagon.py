@@ -1,3 +1,4 @@
+# Loops as long as the condition is true
 while True:
     print("")
     print(" ")
@@ -12,14 +13,16 @@ while True:
     print(" ")
     print(" ")
 
+    # It catches dangerous code and ensure the user to choose an option
     try:
         option = int(input("Enter the number of option you would like to do : "))
 
     except ValueError:
-        print("Please enter a number from 1 - 4.")
+        print("Please enter a number from 1 - 4")
+        continue
 
 
-    # Option 1 append or add data
+    # Option 1: append or add data
     if option == 1:
 
         item = input("Enter item name: ")
@@ -39,7 +42,7 @@ while True:
         print("Sale record saved successfully.")
 
 
-    # Option 2 summary
+    # Option 2: summary of the files in the list. And presents total units sold and grand total revenue
     elif option == 2:
 
         try:
@@ -77,7 +80,7 @@ while True:
         except FileNotFoundError:
             print("No records found.")
 
-    # Option 3 clear or remove sales log data/ overwrite data
+    # Option 3: clear or remove sales log data/ overwrite data
     elif option == 3:
         file = open("sales_log.txt", "w")
         file.close()
@@ -85,11 +88,11 @@ while True:
         print("All records cleared. No records remaining.")
 
 
-    # Option 4 byebye exit
+    # Option 4: forces the program to exit
     elif option == 4:
         print("Thank you for using the Sales Record Management System")
         exit()
 
-    # If no option is chosen
+    # If no option is chosen it will print Invalid option
     else:
         print("Invalid option please select from 1 - 4")
